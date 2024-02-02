@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+import "./App.css";
+import EpiflixNavBar from "./components/EpiflixNavBar";
+import logo from "./logoNetflix.png";
+import EpiflixGenres from "./components/EpiflixGenres";
+import EpiflixFooter from "./components/EpiflixFooter";
+import EpiflixSaga from "./components/EpiflixSaga";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <EpiflixNavBar logo={logo} logoAlt="netflix-logo" />
+        <EpiflixGenres genre="Drama,LGBTQ+,Crime" />
       </header>
-    </div>
+      <main className="bg-black">
+        <EpiflixSaga sagaName="Jurassic Park" searchTerm="jurassic%20park" />
+        <EpiflixSaga sagaName="Indiana Jones" searchTerm="indiana%20jones" />
+        <EpiflixSaga sagaName="The Mummy" searchTerm="the%20mummy" />
+        {/* sarebbe bello se funzionasse */}
+      </main>
+      <footer>
+        <EpiflixFooter />
+      </footer>
+    </>
   );
 }
 
