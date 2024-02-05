@@ -9,9 +9,9 @@ class EpiflixSaga extends Component {
     saga: [],
   };
 
-  myURL = (searchTerm) =>
-    `https://www.omdbapi.com/?apikey=9c621114&s=${searchTerm}`;
-  // sto sbagliando qualcosa per far leggere correttamente l'URL
+  myURL = () =>
+    "https://www.omdbapi.com/?apikey=9c621114&s=" + this.props.searchTerm;
+  //ignora Stefano ma dovevo coreggere sto errore di sintassi
   gettingSaga = (searchTerm) => {
     fetch(this.myURL(searchTerm))
       .then((response) => {
